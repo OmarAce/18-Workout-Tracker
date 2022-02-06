@@ -1,4 +1,7 @@
+// Api Data Retrieval Methods
+
 const API = {
+  // Retrieves Most Recent Workout
   async getLastWorkout() {
     let res;
     try {
@@ -10,6 +13,7 @@ const API = {
 
     return json[json.length - 1];
   },
+  // Adds Exercise to Workout
   async addExercise(data) {
     const id = location.search.split("=")[1];
 
@@ -23,6 +27,7 @@ const API = {
 
     return json;
   },
+  // Creates Workout
   async createWorkout(data = {}) {
     const res = await fetch("/api/workouts", {
       method: "POST",
@@ -35,6 +40,7 @@ const API = {
     return json;
   },
 
+  // Retrieves Workout Data
   async getWorkoutsInRange() {
     const res = await fetch(`/api/workouts/range`);
     const json = await res.json();
