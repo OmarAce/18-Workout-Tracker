@@ -20,13 +20,17 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+// uri 
+const uri = provess.env.MONGODB_URI
 
 // connecting with MongoDB via mongoose at our myapp database running locally on default port 27017
-mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/workout", { 
+mongoose.connect( uri || "mongodb://localhost/workout", { 
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
     useFindAndModify: false 
-});
+})
+    .then(() => console.log('MongoDB Database connected successfully.'))
+    .catch(err => console.log('Error:- ' + err ));
 
 
 // routes
