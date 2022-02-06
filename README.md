@@ -31,7 +31,7 @@ Workout Tracker is an application that allows the user to build a Workout by inp
 
 ## Deployment
 
-*** LINK ***
+[Application is Deployed on Heroku](https://workout-tracker-ace.herokuapp.com/)
 
 ### Built With
 
