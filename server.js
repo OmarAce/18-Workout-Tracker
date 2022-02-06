@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // connecting with MongoDB via mongoose at our myapp database running locally on default port 27017
-mongoose.connect( 'mongodb+srv://root:root@workouttracker.8evwl.mongodb.net/workout?retryWrites=true&w=majority' || "mongodb://localhost/workout", { 
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/workout", { 
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
     useFindAndModify: false 
