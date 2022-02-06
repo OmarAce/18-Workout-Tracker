@@ -1,12 +1,15 @@
+// Dependencies
 const mongoose = require('mongoose');
 const db = require('../models');
 
+// Database connection
 mongoose.connect('mongodb://localhost/workout', {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
 });
 
+// Seed Data for Workout DB
 const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 9)),

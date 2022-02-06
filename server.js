@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000 ;
 // defining app as express
 const app = express();
 
-// logger
+// morgan logger
 app.use(logger("dev"));
 
 // Middleware
@@ -22,8 +22,11 @@ app.use(express.static("public"));
 
 
 // connecting with MongoDB via mongoose at our myapp database running locally on default port 27017
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+    useFindAndModify: false 
+});
 
 
 // routes

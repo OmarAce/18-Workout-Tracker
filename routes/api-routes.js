@@ -1,5 +1,7 @@
+// Depedency
 const Workout = require("../models/workout.js")
 
+// Exporting App Data Routes Module
 module.exports = function (app) {
     // Finds Workouts
     app.get("/api/workouts", function (req, res) {
