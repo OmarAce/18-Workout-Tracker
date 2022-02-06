@@ -1,7 +1,5 @@
-const Workout = require("./workout.js")
+// Exporting an object containing all of our models
 
-module.exports = { 
-
-    Workout: Workout 
-    
-};
+module.exports = {
+    Workout: require("./workout")
+  };
